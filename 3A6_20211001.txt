@@ -1,0 +1,6 @@
+#DEBUG: Format Typ    -> comma
+#DEBUG: Time Period   -> 2021-10-01 00:00:00+00:00 2021-10-02 00:00:00+00:00
+#DEBUG: Time Zone     -> Etc/UTC
+#DEBUG: Data Contact   -> daryl herzmann akrherz@iastate.edu 515-294-5978
+#DEBUG: Entries Found -> -1
+station,valid,lon,lat,tmpf,relh,drct,sped,mslp,p01m,vsby,skyc1,skyc2,skyc3,skyl1,skyl2,skyl3

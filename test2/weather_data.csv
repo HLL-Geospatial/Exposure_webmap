@@ -1,0 +1,101 @@
+,date,mean_wind_speed,mode_wind_direction,mode_cloud_cover1,mode_cloud_cover2,mode_cloud_cover3,average_temp,average_relh,average_pressure,average_precipitation,average_visibility
+3A6,,,,,,,,,,,
+5T6,,,,,,,,,,,
+9A1,,,,,,,,,,,
+ABQ,20230806,7.068609022556391,185.75,"skyc1    FEW
+dtype: object","skyc2    FEW
+dtype: object","skyc3    SCT
+dtype: object",89.16,14.9396,1010.8583333333332,0.0,10.0
+AEG,20230621,6.787804878048781,190.35,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",69.00243902439024,12.54951219512195,,0.0,10.0
+BDN,20230802,6.414084507042253,185.75,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",74.39999999999999,31.77861111111112,,0.0,9.985915492957746
+CBM,20230511,8.356666666666667,180.0,"skyc1    FEW
+dtype: object","skyc2    BKN
+dtype: object","skyc3    BKN
+dtype: object",71.05166666666668,75.92383333333333,1015.4060000000001,0.20733999999999997,7.275166666666666
+CPR,20230821,10.489171974522295,180.0,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",67.70322580645161,68.64387096774193,1014.9500000000002,0.0,7.647335423197492
+CTJ,20230813,0.8145833333333333,180.0,"skyc1    CLR
+dtype: object","skyc2    SCT
+dtype: object","skyc3    BKN
+dtype: object",74.2388888888889,91.03710144927535,,0.0,9.555555555555555
+EDC,20230816,4.616197183098592,180.0,"skyc1    CLR
+dtype: object","skyc2    BKN
+dtype: object","skyc3    SCT
+dtype: object",87.03943661971827,34.83352112676058,,0.0,9.816901408450704
+FBL,20230522,3.801388888888889,180.0,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",67.02499999999999,50.97805555555556,,0.0,9.958333333333334
+FFZ,20191025,12.136012861736335,192.65,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",72.45833333333333,8.740833333333335,1017.3291666666668,4.166666666666667e-06,10.0
+GEU,20230812,9.117857142857144,192.65,"skyc1    SCT
+dtype: object","skyc2    FEW
+dtype: object","skyc3    NaN
+dtype: object",97.7,24.88285714285714,,0.0,10.0
+ILM,20210214,8.347112462006079,185.75,"skyc1    OVC
+dtype: object","skyc2    OVC
+dtype: object","skyc3    OVC
+dtype: object",40.53170731707317,92.6241463414634,1017.7166666666666,1.230513846153846,5.03951367781155
+LRU,20230722,9.26388888888889,190.35,"skyc1    CLR
+dtype: object","skyc2    SCT
+dtype: object","skyc3    SCT
+dtype: object",90.54583333333333,23.80527777777778,,0.0,10.0
+LUL,20200806,4.536111111111111,183.45,"skyc1    CLR
+dtype: object","skyc2    SCT
+dtype: object","skyc3    NaN
+dtype: object",77.78333333333333,73.70472222222222,,0.0,10.0
+MCJ,20230811,10.55763888888889,191.5,"skyc1    CLR
+dtype: object","skyc2    BKN
+dtype: object","skyc3    BKN
+dtype: object",88.525,68.99958333333332,,0.0,9.166666666666666
+MKC,20230519,4.821732026143791,185.75,"skyc1    BKN
+dtype: object","skyc2    OVC
+dtype: object","skyc3    OVC
+dtype: object",63.9125,76.4859375,1016.3583333333332,0.6662808510638298,8.38828125
+NPA,20230815,7.810416666666666,184.6,"skyc1    FEW
+dtype: object","skyc2    SCT
+dtype: object","skyc3    BKN
+dtype: object",88.25,72.25500000000001,1014.4826086956521,0.0,10.0
+NZJ,,,,,,,,,,,
+OAK,20230809,7.3250825082508255,185.75,"skyc1    CLR
+dtype: object","skyc2    OVC
+dtype: object","skyc3    OVC
+dtype: object",64.16,79.7448,1013.8249999999999,0.0,10.0
+PGV,20230806,2.4437499999999996,180.0,"skyc1    CLR
+dtype: object","skyc2    SCT
+dtype: object","skyc3    NaN
+dtype: object",80.57499999999999,81.17277777777778,,0.0,8.413194444444445
+PHX,20210607,9.37379421221865,185.75,"skyc1    CLR
+dtype: object","skyc2    FEW
+dtype: object","skyc3    BKN
+dtype: object",89.92,9.5772,1005.5625,0.0,9.993610223642172
+RBG,20200820,2.697023809523809,180.0,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",73.29166666666667,51.93125,1013.4458333333333,0.0,10.0
+RDU,20221126,2.0788461538461536,180.0,"skyc1    SCT
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",51.458333333333336,61.79791666666667,1020.9791666666666,0.0,9.98397435897436
+RID,20230411,5.157575757575758,180.0,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",56.05454545454546,37.93590909090909,,0.0,9.954545454545455
+SPA,20230715,3.3499999999999996,180.0,"skyc1    SCT
+dtype: object","skyc2    SCT
+dtype: object","skyc3    SCT
+dtype: object",79.89565217391304,76.89289855072464,,0.0,9.528985507246377
+TUS,20210430,10.046784565916399,185.75,"skyc1    CLR
+dtype: object","skyc2    NaN
+dtype: object","skyc3    NaN
+dtype: object",74.875,20.252916666666668,1017.0416666666666,0.0,10.0

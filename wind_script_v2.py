@@ -9,6 +9,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 
+
 def fetch_weather_data():
     MAX_ATTEMPTS = 6
     SERVICE = "http://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?"
@@ -42,12 +43,18 @@ def fetch_weather_data():
     def calculate_mean_and_mode(station_code, date):
         filename = f"{station_code}_{date}_station_data.csv"
         data = pd.read_csv(filename)
+        data.replace('M', pd.NA, inplace=True)
 
         if data.empty:
-            return None, None, None, None, None, None, None, None, None, None
+            return None, None, None, None, None, None, None, None, None, None, None
 
         data['sped'] = pd.to_numeric(data['sped'], errors='coerce')
         data['drct'] = pd.to_numeric(data['drct'], errors='coerce')
+        data['tmpf'] = pd.to_numeric(data['tmpf'], errors='coerce')
+        data['relh'] = pd.to_numeric(data['relh'], errors='coerce')
+        data['mslp'] = pd.to_numeric(data['mslp'], errors='coerce')
+        data['p01m'] = pd.to_numeric(data['p01m'], errors='coerce')
+        data['vsby'] = pd.to_numeric(data['vsby'], errors='coerce')
 
         mean_wind_speed = data['sped'].mean()
         u_values = -mean_wind_speed * data['sped'].apply(lambda x: math.sin(2 * math.pi * x / 360))
@@ -59,16 +66,18 @@ def fetch_weather_data():
         mode_wind_direction = wind_direction.mode().max()
 
         # Calculate mode cloud cover
-        mode_cloud_cover = data[['skyc1', 'skyc2', 'skyc3']].mode().max()
+        mode_cloud_cover1 = data[['skyc1']].mode().max()
+        mode_cloud_cover2 = data[['skyc2']].mode().max()
+        mode_cloud_cover3 = data[['skyc3']].mode().max()
 
         # Calculate average values
-        average_temp = data['tmpf'].mean()
-        average_relh = data['relh'].mean()
-        average_pressure = data['mslp'].mean()
-        average_precipitation = data['p01m'].mean()
-        average_visibility = data['vsby'].mean()
+        average_temp = data['tmpf'].mean(skipna=True)
+        average_relh = data['relh'].mean(skipna=True)
+        average_pressure = data['mslp'].mean(skipna=True)
+        average_precipitation = data['p01m'].mean(skipna=True)
+        average_visibility = data['vsby'].mean(skipna=True)
 
-        return date, mean_wind_speed, mode_wind_direction, mode_cloud_cover, average_temp, average_relh, average_pressure, average_precipitation, average_visibility
+        return date, mean_wind_speed, mode_wind_direction, mode_cloud_cover1, mode_cloud_cover2, mode_cloud_cover3, average_temp, average_relh, average_pressure, average_precipitation, average_visibility
 
     # Define stations_dates dictionary and loop inside the fetch_weather_data function
     stations_dates = {
@@ -120,18 +129,20 @@ def fetch_weather_data():
 
     results = {}
     for station_code, date_str in stations_dates.items():
-        date, mean_wind_speed, mode_wind_direction, mode_cloud_cover, average_temp, average_relh, average_pressure, average_precipitation, average_visibility = calculate_mean_and_mode(station_code, datetime.datetime.strptime(date_str, "%Y-%m-%d").strftime('%Y%m%d'))
+        date, mean_wind_speed, mode_wind_direction, mode_cloud_cover1, mode_cloud_cover2, mode_cloud_cover3, average_temp, average_relh, average_pressure, average_precipitation, average_visibility = calculate_mean_and_mode(station_code, datetime.datetime.strptime(date_str, "%Y-%m-%d").strftime('%Y%m%d'))
 
         # Check if any of the returned values are None
-        if None in (date, mean_wind_speed, mode_wind_direction, mode_cloud_cover, average_temp, average_relh, average_pressure, average_precipitation, average_visibility):
-            print(f"Skipping {station_code}, incomplete data")
-            continue
+        # if None in (date, mean_wind_speed, mode_wind_direction, mode_cloud_cover1, mode_cloud_cover2, mode_cloud_cover3, average_temp, average_relh, average_pressure, average_precipitation, average_visibility):
+        #     print(f"Skipping {station_code}, incomplete data")
+        #     continue
 
         results[station_code] = {
             'date': date,
             'mean_wind_speed': mean_wind_speed,
             'mode_wind_direction': mode_wind_direction,
-            'mode_cloud_cover': mode_cloud_cover,
+            'mode_cloud_cover1': mode_cloud_cover1,
+            'mode_cloud_cover2': mode_cloud_cover2,
+            'mode_cloud_cover3': mode_cloud_cover3,
             'average_temp': average_temp,
             'average_relh': average_relh,
             'average_pressure': average_pressure,
@@ -143,3 +154,4 @@ def fetch_weather_data():
     combined_data.to_csv(f"weather_data.csv", index=True)
 
 
+    fetch_weather_data()
